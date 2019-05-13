@@ -39,13 +39,11 @@ export default class Game{
         }
     }
 
-    draw(ctx){
-        
-        this.pacman.draw(ctx);
+    draw(ctx){      
         this.paths.forEach(object => object.draw(ctx));
         this.ghost.forEach(object => object.draw(ctx));
         this.foods.forEach(object => object.draw(ctx));
-        
+        this.pacman.draw(ctx);
 
         ctx.font = " 60px Impact";
         ctx.strokeText("Score : " + this.score, 620, 60, 160);
