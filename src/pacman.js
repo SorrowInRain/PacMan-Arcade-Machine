@@ -5,7 +5,7 @@ export default class Pacman{
         this.game = game;
         this.size = size;
         this.movable = movable;
-        this.image = document.getElementById('coin');
+        this.image = document.getElementById('pacman');
         this.canvasX = this.x * this.size;
         this.canvasY = this.y * this.size;
         this.speedX = 0;
@@ -47,7 +47,7 @@ export default class Pacman{
     }
 
     update(deltaTime){
-        if(this.game.paths[(this.y-1) * this.game.dimension + this.x].movable == 1 && this.speedY < 0){
+        	if(this.game.paths[(this.y-1) * this.game.dimension + this.x].movable == 1 && this.speedY < 0){
 			this.y += this.speedY;
 		}
 		
