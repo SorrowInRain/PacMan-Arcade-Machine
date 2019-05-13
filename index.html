@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            PacMan ala IRK
+        </title>
+        <meta charset="UTF-8" />
+
+        <style>
+            #screenHolder{
+                width:100%;
+                text-align: center;
+            }
+
+            #gameScreen{
+                border : 1px solid black;
+                display : inline;
+            }
+
+            img{
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+            <img src="./Assets/pacman.gif" id="pacman">
+            <img src="./Assets/ghost.gif" id="ghost">
+            <img src="./Assets/grounds.png" id="ground">
+            <img src="./Assets/coin.gif" id="coin">
+            <img src="./Assets/walls.png" id="wall">
+            <img src="./Assets/cherries.png" id="cherries">
+        <div id="screenHolder">
+                <canvas id = "gameScreen" width = "800" height = "600"></canvas>
+        </div>
+        <script type="module" src = "./src/pacman.js"></script>
+        <script type="module" src = "./src/index.js"></script>
+    </body>
+</html>
