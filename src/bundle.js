@@ -487,20 +487,24 @@ module.exports = function(axis, ord, size, movable, game){
     }
 
     this.update = function(deltaTime){
-        	if(this.game.paths[(this.y-1) * this.game.dimension + this.x].movable == 1 && this.speedY < 0){
-			this.y += this.speedY;
+        if(this.game.paths[(this.y-1) * this.game.dimension + this.x].movable == 1 && this.speedY < 0){
+            this.y += this.speedY;
+            this.stopX();
 		}
 		
 		if(this.game.paths[(this.y) * this.game.dimension + this.x-1].movable == 1 && this.speedX < 0){
-			this.x += this.speedX;
+            this.x += this.speedX;
+            this.stopY();
 		}
 		
 		if(this.game.paths[(this.y+1) * this.game.dimension + this.x].movable == 1 && this.speedY > 0){
-			this.y += this.speedY;
+            this.y += this.speedY;
+            this.stopX();
 		}
 		
 		if(this.game.paths[(this.y) * this.game.dimension + this.x+1].movable == 1 && this.speedX > 0){
-			this.x += this.speedX;
+            this.x += this.speedX;
+            this.stopY();
 		}
         
         if(this.x <= 0){
