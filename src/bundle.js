@@ -184,8 +184,8 @@ module.exports = function (gameWidth, gameHeight, defaultSize){
 
         this.width = gameWidth;
         this.height = gameHeight;
-        this.dimension = map1.length;
-        this.size = gameWidth / map1.length;
+        this.dimension = map.map1.length;
+        this.size = gameWidth / map.map1.length;
         this.gameObject = [];
         this.score = 0;
         this.running = true;
