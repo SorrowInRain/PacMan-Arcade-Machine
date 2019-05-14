@@ -1,7 +1,5 @@
-import {bfs, dijkstra} from "./algortihm.js";
-
-export default class Ghost{
-    constructor(axis, ord, size, movable, game){
+module.exports = function (axis, ord, size, movable, game){
+    var algo = require('./algortihm.js');
         this.x = axis;
         this.y = ord;
         this.game = game;
@@ -13,37 +11,36 @@ export default class Ghost{
         this.direction = 5;
 
         //this.direction = bfs(this, this.game.pacman, this.game.paths);
-    }
 
-    moveUp(){
+    this.moveUp = function(){
         if(this.game.paths[(this.y-1) * this.game.dimension + this.x].movable == 1)
             this.y--;
     }
 
-    moveLeft(){
+    this.moveLeft = function(){
         if(this.game.paths[(this.y) * this.game.dimension + this.x-1].movable == 1)
             this.x--;
     }
 
-    moveRight(){
+    this.moveRight = function(){
         if(this.game.paths[(this.y) * this.game.dimension + this.x+1].movable == 1)
             this.x++;
     }
 
-    moveDown(){
+    this.moveDown = function(){
         if(this.game.paths[(this.y+1) * this.game.dimension + this.x].movable == 1)
             this.y++;
     }
 
-    stopX(){
+    this.stopX = function(){
         this.x += 0;
     }
 
-    stopY(){
+    this.stopY = function(){
         this.y += 0;
     }
    
-    draw(ctx){
+    this.draw = function(ctx){
         ctx.drawImage(
             this.image,
             this.canvasX,
@@ -54,8 +51,8 @@ export default class Ghost{
     }
 
 
-    update(deltaTime){
-        this.direction = dijkstra(this, this.game.pacman, this.game.dimension, this.game.paths);
+    this.update = function(deltaTime){
+        this.direction = algo.dijkstra(this, this.game.pacman, this.game.dimension, this.game.paths);
         // console.log(this.direction);
         switch(this.direction){
             case 0 : this.game.end(); break;

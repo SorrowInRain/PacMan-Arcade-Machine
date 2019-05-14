@@ -1,4 +1,4 @@
-export function detectCollisionWall(stc, dnm){
+module.exports.detectCollisionWall = function (stc, dnm){
     let botStc = stc.y + stc.size;
     let topStc = stc.y;
     let lefStc = stc.x;
@@ -31,6 +31,6 @@ export function detectCollisionWall(stc, dnm){
     }
 }
 
-export function detectCollisionCoin(stc, dnm){
+module.exports.detectCollisionCoin = function (stc, dnm){
     return (stc.x == dnm.x && stc.y == dnm.y);
 }

@@ -1,7 +1,6 @@
-import {detectCollisionCoin} from "./collisionDetect.js";
+module.exports = function (axis, ord, size, type, game){
+    var collider = require('./collisionDetect.js');
 
-export default class Food{
-    constructor(axis, ord, size, type, game){
         this.x = axis;
         this.y = ord;
         this.game = game;
@@ -18,9 +17,8 @@ export default class Food{
         else{
             this.image = document.getElementById('cherries');
         }
-    }
 
-    draw(ctx){
+    this.draw = function(ctx){
         ctx.drawImage(
             this.image,
             this.canvasX,
@@ -30,9 +28,9 @@ export default class Food{
         );
     }
 
-    update(deltaTime){
+    this.update = function(deltaTime){
         //console.log(this.game.pacman.position)
-        if(detectCollisionCoin(this, this.game.pacman)){
+        if(collider.detectCollisionCoin(this, this.game.pacman)){
             if(this.type == 1){
                 this.game.score += 1;
             }

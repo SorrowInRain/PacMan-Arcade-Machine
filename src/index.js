@@ -1,4 +1,4 @@
-import Game from "./game.js";
+var Game = require('./game.js');
 
 let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");

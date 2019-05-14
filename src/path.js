@@ -1,7 +1,5 @@
-import {detectCollisionWall} from "./collisionDetect.js";
-
-export default class Path{
-    constructor(axis, ord, size, movable, game){
+module.exports = function(axis, ord, size, movable, game){
+    
         this.x = axis;
         this.y = ord;
         
@@ -16,9 +14,9 @@ export default class Path{
         else if(this.movable == 1){
             this.image = document.getElementById('ground');
         }
-    }
+    
 
-    draw(ctx){
+    this.draw = function(ctx){
         ctx.drawImage(
             this.image,
             this.x * this.size,
@@ -28,7 +26,7 @@ export default class Path{
         );
     }
 
-    update(deltaTime){
+    this.update = function(deltaTime){
         
     }
 }

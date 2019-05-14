@@ -1,5 +1,5 @@
-export default class Pacman{
-    constructor(axis, ord, size, movable, game){
+module.exports = function(axis, ord, size, movable, game){
+
         this.x = axis;
         this.y = ord;
         this.game = game;
@@ -10,33 +10,33 @@ export default class Pacman{
         this.canvasY = this.y * this.size;
         this.speedX = 0;
         this.speedY = 0;
-    }
+    
 
-    moveUp(){
+    this.moveUp = function(){
         this.speedY = -1;
     }
 
-    moveLeft(){
+    this.moveLeft = function(){
         this.speedX = -1;
     }
 
-    moveRight(){
+    this.moveRight = function(){
         this.speedX = 1;
     }
 
-    moveDown(){
+    this.moveDown = function(){
         this.speedY = 1;
     }
 
-    stopX(){
+    this.stopX = function(){
         this.speedX = 0;
     }
 
-    stopY(){
+    this.stopY = function(){
         this.speedY = 0;
     }
 
-    draw(ctx){
+    this.draw = function(ctx){
         ctx.drawImage(
             this.image,
             this.canvasX,
@@ -46,7 +46,7 @@ export default class Pacman{
         );
     }
 
-    update(deltaTime){
+    this.update = function(deltaTime){
         	if(this.game.paths[(this.y-1) * this.game.dimension + this.x].movable == 1 && this.speedY < 0){
 			this.y += this.speedY;
 		}

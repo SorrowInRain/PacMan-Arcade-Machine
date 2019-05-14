@@ -1,4 +1,4 @@
-export function bfs(ghost, pacman, paths){
+module.exports.bfs = function(ghost, pacman, paths){
     var queue = [];
     var solution = [];
 
@@ -65,7 +65,7 @@ export function bfs(ghost, pacman, paths){
     return solution[minInd];
 }
 
-export function dijkstra(ghost, pacman, dimension, path){
+module.exports.dijkstra =  function (ghost, pacman, dimension, path){
     if(ghost.x == pacman.x && ghost.y == pacman.y){
         return 0;
         //game selesai, tidak usah dilanjutkan

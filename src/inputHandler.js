@@ -1,5 +1,4 @@
-export default class InputHandler{
-    constructor(pacman){
+module.exports = function(pacman){
         document.addEventListener('keydown', (event)=>{
             switch(event.keyCode){
                 case 87 : //key W 
@@ -33,5 +32,4 @@ export default class InputHandler{
                     break;
             }
         });*/
-    }
 }

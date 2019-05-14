@@ -1,9 +1,9 @@
-import Path from "./path.js";
-import Pacman from "./pacman.js";
-import Ghost from "./ghost.js";
-import Food from "./food.js";
+var Path = require('./path.js');
+var Pacman = require('./pacman.js');
+var Ghost = require('./ghost.js');
+var Food = require('./food.js');
 
-export function buildMap(game, map, size){
+module.exports.buildMap = function (game, map, size){
     let paths = [];
     let chara = [];
     let foods = [];
@@ -41,7 +41,7 @@ export function buildMap(game, map, size){
     return rets;
 }
 
-export const map1 = [
+module.exports.map1 = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,3,0,0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,1],
     [1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,0,0,1],
@@ -62,4 +62,4 @@ export const map1 = [
     [1,0,1,0,0,0,1,0,0,1,1,0,0,1,0,1,0,0,0,1],
     [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-]
+];
